@@ -20,7 +20,7 @@ export class SnakeGames extends React.Component {
         this.state = {
             snake: snake,
             board: board,
-            growth: 20,
+            growth: 16,
             paused: true,
             gameOver: false,
             direction: keys.up,

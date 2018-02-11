@@ -27,6 +27,9 @@ export class WebsiteLeftButton extends React.Component {
                         <span className="left-button"/>
                         <span className="left-label">PLAY</span>
                     </div>
+                    <div className="tooltip">here
+                        <span className="tooltiptext">click <span>title</span> to start</span>
+                    </div>
                 </div>
             </div>
 
