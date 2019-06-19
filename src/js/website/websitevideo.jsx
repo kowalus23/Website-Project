@@ -1,7 +1,5 @@
 import React from "react";
 
-// const websiteBackground = require('../../images/background.mp4');
-
 export class WebsiteVideo extends React.Component {
     render() {
         return (

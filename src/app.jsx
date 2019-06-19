@@ -9,8 +9,6 @@ import {Snake} from "./js/snake/snake.jsx";
 import {SnakeGame} from "./js/snake/snakegame.jsx";
 import {SnakeGameOver} from "./js/snake/snakegameover.jsx";
 import {SnakeGames} from "./js/snake/snake.jsx";
-import {SnakeTest} from "./js/snake/snakeTEST.jsx";
-import Test from "./js/test/snakeSECONDTEST.jsx";
 
 
 
@@ -23,7 +21,6 @@ class App extends React.Component {
             <Route path='/snakegame' component={SnakeGame}/>
             <Route path='/snakegameover' component={SnakeGameOver}/>
             <Route path='/snakegames' component={SnakeGames}/>
-            <Route path='/test' component={Test}/>
         </Router>;
     }
 }

@@ -27,8 +27,6 @@ export class SnakeMain extends React.Component {
                     ]}/>
                 </div>
                 <div className="snake-menu-buttons">
-                    <button className="snake-menu-start-btn menu-btn btn"><Link to="/test">TEST</Link>
-                    </button>
                     <button className="snake-menu-return-btn menu-btn btn"><Link to="/">RETURN</Link>
                     </button>
                     <button className="snake-menu-start-btn menu-btn btn"><Link to="/snakegames">START</Link>
