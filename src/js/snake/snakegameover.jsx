@@ -1,15 +1,16 @@
 import React from "react";
 import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
-import fetch from 'whatwg-fetch';
 import {AudioGameover} from "../website/websiteaudio.jsx";
 import {CSSTransitionGroup} from 'react-transition-group';
-
+import {SnakeGame} from "./snake.jsx";
 
 export class SnakeGameOver extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isShown: false
+            isShown: false,
+            nickName: '',
+            score: 0
         }
     }
 
@@ -18,42 +19,25 @@ export class SnakeGameOver extends React.Component {
     }
 
 
-    slideBox() {
+    slideBox(nickName, score) {
         return (
             <ul className="gameover-icons">
                 <li className="icon-floppy">1. PLAYER1 NAME - SCORE: 250</li>
                 <li className="icon-floppy">2. PLAYER2 NAME - SCORE: 440</li>
                 <li className="icon-floppy">3. PLAYER3 NAME - SCORE: 130</li>
                 <li className="icon-floppy">4. PLAYER4 NAME - SCORE: 200</li>
-                <li className="icon-floppy">............................</li>
+                <li className="icon-floppy">5. {nickName} - {score}: XXX</li>
             </ul>
         )
     }
 
+    onChangeNick = (event) => {
+      this.setState({nickName: event.target.value})
+    };
+
     render() {
         let btnText = this.state.isShown ? '-' : '+';
-        let component = this.state.isShown ? this.slideBox() : '';
-        // function addPlayer(name) {
-        //     fetch('http://localhost:9007/', {
-        //         method: 'POST',
-        //         body: JSON.stringify(myData),
-        //         data: {
-        //             title: name,
-        //         }
-        //     })
-        //         .then(resp => resp.json()).then(data => {
-        //         console.log(data);
-        //         readPlayer()
-        //     });
-        // }
-        //
-        // function readPlayer() {
-        //     fetch('http://localhost:9007/').then(r => r.text())
-        //         .then(data => {
-        //             console.log(data);
-        //
-        //         });
-        // }
+        let component = this.state.isShown ? this.slideBox(this.state.nickName, this.state.score) : '';
 
         return <div className="gameover-body-wrapper">
             <AudioGameover/>
@@ -87,7 +71,7 @@ export class SnakeGameOver extends React.Component {
                             {component}
                         </CSSTransitionGroup>
                         <div>
-                            <input type="text" placeholder="Podaj swój nick..." className="gameover-input"/>
+                            <input onChange={this.onChangeNick} type="text" placeholder="Podaj swój nick..." className="gameover-input"/>
                         </div>
                     </div>
                     <div className="gameover-statusbar">

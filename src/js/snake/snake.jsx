@@ -8,7 +8,7 @@ const keys = {left: 37, up: 38, right: 39, down: 40};
 const dirs = {37: true, 38: true, 39: true, 40: true};
 
 
-export class SnakeGames extends React.Component {
+export class SnakeGame extends React.Component {
   constructor(props) {
     super(props);
 
@@ -19,20 +19,17 @@ export class SnakeGames extends React.Component {
     this.state = {
       snake: snake,
       board: board,
-      growth: 1,
+      growth: 0,
       paused: true,
       gameOver: false,
       direction: keys.up,
       specialKey: 0
     }
-
   }
 
   componentDidMount() {
     this.resume();
-
   }
-
 
   pause() {
     if (this.state.gameOver || this.state.paused) {
@@ -47,7 +44,6 @@ export class SnakeGames extends React.Component {
     }
     this.setState({paused: false});
     this.refs.board.focus();
-    this.tick();
     setTimeout(() => {
       this.tick();
     }, 100);
@@ -57,7 +53,6 @@ export class SnakeGames extends React.Component {
     if (this.state.paused) {
       return;
     }
-
 
     const snake = this.state.snake;
     const board = this.state.board;
@@ -82,7 +77,7 @@ export class SnakeGames extends React.Component {
         ii = Math.floor(Math.random() * numCells);
       } while (board[ii]);
       board[ii] = food;
-      growth += 2; // po zjedzeniu fruit, rosnie o 2 punkty
+      growth += 1; // po zjedzeniu fruit, rosnie o 2 punkty
     } else if (growth) {
       growth -= 1; // ta wartość stabilizuje rośnięcie snake, w przypadku ustawienia wartości mniejszej lub większej, zacznie rosnąć w nieskończoność
     } else {
@@ -92,17 +87,11 @@ export class SnakeGames extends React.Component {
     snake.unshift(head);
     board[head] = body;
 
-    if (this.nextDirection) {
-      this.state.direction = this.nextDirection;
-      this.nextDirection = null;
-    }
-
     this.setState({
       snake: snake,
       board: board,
       growth: growth,
     });
-
     setTimeout(() => {
       this.tick();
     }, 100);
@@ -112,13 +101,11 @@ export class SnakeGames extends React.Component {
     let direction = event.nativeEvent.keyCode;
     let difference = Math.abs(this.state.direction - direction);
     if (dirs[direction] && difference !== 0 && difference !== 2) {
-      this.nextDirection = direction;
       this.setState({
         direction: direction
       })
     }
   }
-
 
   render() {
     // Tworzenie mapy/planszy z podziałem na Kolumny/Wiersze i ich wielkość

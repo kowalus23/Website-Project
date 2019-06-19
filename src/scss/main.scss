@@ -37,65 +37,68 @@ video {
 }
 
 .container {
-  width: 90vw;
-  height: 90vh;
-  //border: 2px dotted white;
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
   display: flex;
 
   .column {
     display: flex;
-    //border: 2px dotted tomato;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    //border: 2px dotted white;
 
     .boxes {
-      margin: 40px auto;
+      margin: auto auto;
       font-size: 1rem;
     }
 
     .info {
-      width: 95%;
-      height: 40%;
       background: linear-gradient(to bottom, rgba(134, 140, 161, 0.31) 0%, rgba(15, 17, 33, 0) 100%);;
       border-radius: 4px;
       overflow: hidden;
       font-weight: 500;
       font-family: "Lato", sans-serif;
+      height: 480px;
+      margin-top: 0 !important;
 
+      @media (max-width: 1100px) {
+        height: 400px;
+        margin-bottom: 0;
+        font-size: 1.2em;
+      }
 
       h1 {
         color: tomato;
         font-size: 1.8em;
         padding: 10px;
-
       }
+
       h2 {
         padding: 20px;
         color: #307ca9;
         font-weight: 100;
         font-size: 1em;
-
       }
     }
 
     .logo {
-      width: 60%;
-      height: 30%;
-      //border: 1px dotted white;
       opacity: 1;
       border-radius: 6px;
-      margin-bottom: 120px;
       display: flex;
+      height: 480px;
+      margin-top: 0 !important;
+
+      @media (max-width: 1100px) {
+        height: 400px;
+        margin-bottom: 0;
+      }
 
       p {
         color: white;
         font-size: 50px;
       }
-
     }
 
     .left-button-box {
@@ -146,12 +149,15 @@ video {
 .title-two {
   color: #DF673D;
 }
+
 .title-three {
   color: #D93832;
 }
+
 .title-four {
   color: #C7365F;
 }
+
 .title-five {
   color: #60348D;
 }
@@ -162,7 +168,10 @@ video {
 
 .logo-container {
   display: flex;
-  top: 0; left: 550px; bottom: 500px; right: 0;
+  top: 0;
+  left: 550px;
+  bottom: 500px;
+  right: 0;
   width: 100%;
   height: 100%;
   //border: 1px dotted tomato;
@@ -199,11 +208,8 @@ video {
   19px 28px 0 rgba(0, 0, 48, 0.3),
   20px 29px 0 rgba(0, 0, 48, 0.3),
   21px 30px 0 rgba(0, 0, 48, 0.3),
-
-  90px 92px 0 rgba(255, 255, 255,0);
+  90px 92px 0 rgba(255, 255, 255, 0);
 }
-
-
 
 
 // DUŻY SYF LEFT/RIGHT BUTTON
@@ -231,7 +237,6 @@ video {
 }
 
 
-
 .title-color-container {
   display: flex;
   align-items: center;
@@ -257,7 +262,7 @@ video {
   background: -moz-linear-gradient(top, rgba(134, 140, 161, 0.3) 0%, rgba(15, 17, 33, 0) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(134, 140, 161, 0.31) 0%, rgba(23, 22, 49, 0) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(134, 140, 161, 0.31) 0%, rgba(15, 17, 33, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#999999', GradientType=0); /* IE6-9 */
 }
 
 
@@ -276,6 +281,7 @@ video {
   justify-content: center;
   align-items: center;
 }
+
 .left-toggle:before {
   box-shadow: 0 0 25px 12.5px #fff;
   border-radius: 50%;
@@ -289,6 +295,7 @@ video {
   left: 50%;
   top: 50%;
 }
+
 .left-button {
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
@@ -306,8 +313,8 @@ video {
   left: 50%;
   top: 50%;
 }
+
 .left-label {
-  transition: color 300ms ease-out;
   text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
   text-align: center;
   font-weight: 700;
@@ -332,21 +339,25 @@ video {
   left: 0;
   top: 0;
 }
+
 .left-toggle input:active ~ .left-button {
   box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
 }
+
 .left-toggle input:active ~ .left-label {
   font-size: 70px;
   color: orange;
-  transition: all 2s;
+  transition: all 1s;
 }
+
 .left-toggle input:checked ~ .left-button {
   box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
 }
+
 .left-toggle input:checked ~ .left-label {
   font-size: 20px;
   color: red;
-  transition: all 2s;
+  transition: all 100ms;
 }
 
 
@@ -372,9 +383,6 @@ video {
   background-color: green;
   margin: 20px;
 }
-
-
-
 
 
 // SNAKE GAME - GAME PAGE ////////////////////
@@ -405,7 +413,6 @@ video {
   position: absolute;
   top: 50%;
 }
-
 
 
 .body-cell, .null-cell {
@@ -451,7 +458,7 @@ video {
   flex-direction: column-reverse;
 
 
-  .btn{
+  .btn {
     top: 50%;
     left: 45%;
     background-color: darkgrey;
@@ -463,10 +470,10 @@ video {
     border-top-color: white;
     border-bottom-color: dimgrey;
     border-right-color: dimgrey;
-    -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    outline-color: rgba(0,0,0,0.1);
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    outline-color: rgba(0, 0, 0, 0.1);
     margin: 5px;
     display: flex;
     align-items: center;
@@ -483,28 +490,29 @@ video {
     }
   }
 
-  .btn:hover{
+  .btn:hover {
     background-color: darkblue;
     color: white;
     cursor: pointer;
   }
-  .btn:active{
+
+  .btn:active {
     background-color: darkgrey;
     color: black;
     border-left-color: dimgrey;
     border-top-color: dimgrey;
     border-bottom-color: white;
     border-right-color: white;
-    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
   }
 
 }
 
 
 .snake-game {
-  .btn{
+  .btn {
     top: 50%;
     left: 45%;
     background-color: darkgrey;
@@ -516,10 +524,10 @@ video {
     border-top-color: white;
     border-bottom-color: dimgrey;
     border-right-color: dimgrey;
-    -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
-    outline-color: rgba(0,0,0,0.1);
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    outline-color: rgba(0, 0, 0, 0.1);
     margin: 5px;
     display: flex;
     align-items: center;
@@ -536,21 +544,22 @@ video {
     }
   }
 
-  .btn:hover{
+  .btn:hover {
     background-color: darkblue;
     color: white;
     cursor: pointer;
   }
-  .btn:active{
+
+  .btn:active {
     background-color: darkgrey;
     color: black;
     border-left-color: dimgrey;
     border-top-color: dimgrey;
     border-bottom-color: white;
     border-right-color: white;
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
   }
 
 }
@@ -712,21 +721,32 @@ video {
 
 /////////////////////////// TYPING //////////////////////
 
-.typed-cursor{
+.typed-cursor {
   opacity: 1;
   animation: typedjsBlink 0.7s infinite;
   -webkit-animation: typedjsBlink 0.7s infinite;
   animation: typedjsBlink 0.7s infinite;
 }
-@keyframes typedjsBlink{
-  50% { opacity: 0.0; }
+
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0.0;
+  }
 }
-@-webkit-keyframes typedjsBlink{
-  0% { opacity: 1; }
-  50% { opacity: 0.0; }
-  100% { opacity: 1; }
+
+@-webkit-keyframes typedjsBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.typed-fade-out{
+
+.typed-fade-out {
   opacity: 0;
   transition: opacity .25s;
   -webkit-animation: 0;
@@ -747,6 +767,7 @@ video {
 
 
 }
+
 .gameover-container {
   border: 2px solid green;
   border-bottom-color: #535353;
@@ -758,6 +779,7 @@ video {
   max-height: 70vh;
   font-size: 13px;
   padding: 2px;
+
   ul.gameover-toolbar {
     text-align: left;
     font-size: 13px;
@@ -765,11 +787,13 @@ video {
     padding: 4px 1px;
     font-family: Arial, 'Press Start 2P', cursive;
     margin: 0;
+
     li {
       display: inline-block;
       padding: 0 5px;
     }
   }
+
   .gameover-container-inner {
     width: 50vw;
     border: 2px solid;
@@ -785,12 +809,14 @@ video {
       list-style: none;
       padding: 6px 2px;
       margin: 0;
+
       li {
         display: block;
         padding: 10px 5px;
       }
     }
   }
+
   .gameover-statusbar {
     .gameover-left, .gameover-right {
       border: 1px solid;
@@ -802,18 +828,22 @@ video {
       font-family: Arial, 'Press Start 2P', cursive;
 
     }
+
     .left {
       width: 33%;
     }
+
     .right {
       width: 66%;
     }
   }
 }
+
 .gameover-title {
   background-color: #808080;
   padding: 2px 4px 3px 4px;
   position: relative;
+
   h1 {
     font-weight: bold;
     color: #bcbcbc;
@@ -822,6 +852,7 @@ video {
     margin: 0;
     text-align: left;
   }
+
   button {
     border: 2px solid;
     border-bottom-color: #444;
@@ -837,6 +868,7 @@ video {
     width: 15px;
     top: 2px;
   }
+
   button.gameover-minimize {
     right: 34px;
     font-family: Arial, 'Press Start 2P', cursive;
@@ -845,6 +877,7 @@ video {
 
 
   }
+
   button.gameover-expand {
     right: 18px;
     font-family: Arial, 'Press Start 2P', cursive;
@@ -860,6 +893,7 @@ video {
     color: black;
 
   }
+
   button a {
     text-decoration: none;
     color: black;
@@ -875,7 +909,7 @@ video {
   font-size: 16px;
   padding: 0 20px;
   outline-color: green;
-  font-family:'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive;
 
 
 }
@@ -885,18 +919,21 @@ video {
   color: white;
   padding: 4px 0;
 }
+
 .edit:hover {
   background-color: #04198b;
   color: white;
   padding: 4px 0;
 
 }
+
 .view:hover {
   background-color: #04198b;
   color: white;
   padding: 4px 0;
 
 }
+
 .help:hover {
   background-color: #04198b;
   color: white;
@@ -904,32 +941,29 @@ video {
 }
 
 
-
-
 .slide-appear {
-  opacity    : 0;
-  transition : opacity .8s ease-in;
+  opacity: 0;
+  transition: opacity .8s ease-in;
 }
 
 .slide-appear.slide-appear-active {
-  opacity : 1;
+  opacity: 1;
 }
 
 
 .slide-enter {
-  max-height : 0;
-  transition : all .5s ease-in;
+  max-height: 0;
+  transition: all .5s ease-in;
 }
 
 .slide-enter.slide-enter-active {
-  max-height : 1000px;
+  max-height: 1000px;
 }
 
 
 .wall, .blank, table {
   display: none;
 }
-
 
 
 //////////////// TOOLTIP support //////////////////

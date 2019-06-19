@@ -18,7 +18,7 @@ module.exports = {
     compress: true,
     hot: true,
     inline: true,
-    port: 9002
+    port: 9005
   },
   module: {
     rules: [
@@ -60,7 +60,7 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       hash: true
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

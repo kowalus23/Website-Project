@@ -1,33 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Typed from 'typed.js';
 import './scss/main.scss';
-import {Website} from "./js/website/website.jsx";
+import Website from "./js/website/website.jsx";
 import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
-import {SnakeMain} from "./js/snake/snakemenu.jsx";
-import {Snake} from "./js/snake/snake.jsx";
-import {SnakeGame} from "./js/snake/snakegame.jsx";
+import SnakeMain from "./js/snake/snakemenu.jsx";
 import {SnakeGameOver} from "./js/snake/snakegameover.jsx";
-import {SnakeGames} from "./js/snake/snake.jsx";
-
-
+import {SnakeGame} from "./js/snake/snake.jsx";
 
 
 class App extends React.Component {
-    render() {
-        return <Router history={hashHistory}>
-            <Route path='/' component={Website}/>
-            <Route path='/snakemenu' component={SnakeMain}/>
-            <Route path='/snakegame' component={SnakeGame}/>
-            <Route path='/snakegameover' component={SnakeGameOver}/>
-            <Route path='/snakegames' component={SnakeGames}/>
-        </Router>;
-    }
+  render() {
+    return <Router history={hashHistory}>
+      <Route path='/' component={Website}/>
+      <Route path='/snakemenu' component={SnakeMain}/>
+      <Route path='/snakegameover' component={SnakeGameOver}/>
+      <Route path='/snakegame' component={SnakeGame}/>
+    </Router>;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    ReactDOM.render(
-        <App />,
-        document.getElementById('app')
-    );
+  ReactDOM.render(
+    <App/>,
+    document.getElementById('app')
+  );
 });
