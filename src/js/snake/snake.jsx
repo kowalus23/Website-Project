@@ -24,6 +24,7 @@ export class SnakeGames extends React.Component {
             paused: true,
             gameOver: false,
             direction: keys.up,
+            specialKey: 0
         }
 
     }
@@ -111,7 +112,6 @@ export class SnakeGames extends React.Component {
 
     handleKey(event) {
         let direction = event.nativeEvent.keyCode;
-        console.log(direction);
         let difference = Math.abs(this.state.direction - direction);
         // Warunek - jeśli klawisz jest nie właściwy / i ma taki sam kierunek / i ma przeciwległy kierunek
         if (dirs[direction] && difference !== 0 && difference !== 2) {
@@ -127,12 +127,15 @@ export class SnakeGames extends React.Component {
         const numCols = this.props.numCols || 20;
         const cellSize = this.props.cellSize || 30;
 
-
+let key = 0;
         for (let row = 0; row < numRows; row++) {
+
+                key++;
             for (let col = 0; col < numCols; col++) {
+                key++;
                 let code = this.state.board[numCols * row + col];
                 let type = code === body ? 'body' : code === food ? 'food' : 'null';
-                cells.push(<div className={type + '-cell'}/>);
+                cells.push(<div key={key} className={type + '-cell'}/>);
             }
         }
 
