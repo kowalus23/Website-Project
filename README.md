@@ -2,13 +2,15 @@
 
 > It's my ending coding's course project
 
+`EDIT 2019.07` have an issue with publishing on gh pages, have to reconfigure webpack, or just move it to create-react-app
+
 ## Build Setup
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:9000
+# serve with hot reload at localhost:9005
 npm run dev
 
 # build for production with minification
