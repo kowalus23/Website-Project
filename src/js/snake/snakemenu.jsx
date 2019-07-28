@@ -1,5 +1,5 @@
 import React from "react";
-import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+import {Link} from 'react-router';
 import {TypedReact} from "../typer.jsx";
 import {AudioMenu} from "../website/websiteaudio.jsx";
 

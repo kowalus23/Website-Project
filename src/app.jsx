@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/main.scss';
 import Website from "./js/website/website.jsx";
-import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import SnakeMain from "./js/snake/snakemenu.jsx";
 import {SnakeGameOver} from "./js/snake/snakegameover.jsx";
 import {SnakeGame} from "./js/snake/snake.jsx";

@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Router,
-  Route,
-  Link,
-  IndexLink,
-  IndexRoute,
-  hashHistory
-} from 'react-router';
+import {hashHistory} from 'react-router';
 
 
 export class WebsiteLeftButton extends React.Component {
@@ -35,7 +28,6 @@ export class WebsiteLeftButton extends React.Component {
           </div>
         </div>
       </div>
-
     )
   }
 }

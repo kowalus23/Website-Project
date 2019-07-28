@@ -1,5 +1,5 @@
 import React from "react";
-import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+import {Link} from 'react-router';
 import {AudioGame} from "../website/websiteaudio.jsx";
 
 const body = 1;
@@ -12,7 +12,7 @@ export class SnakeGame extends React.Component {
   constructor(props) {
     super(props);
 
-    const start = this.props.startIndex || 161;   // pozycja startowa
+    const start = this.props.startIndex || 161;
     const snake = [start];
     const board = [];
     board[start] = body;
@@ -63,12 +63,10 @@ export class SnakeGame extends React.Component {
     let numCols = this.props.numCols || 20;
     let head = getNextIndex(snake[0], direction, numRows, numCols);
 
-    // GAME OVER (zjedzenie siebie)
     if (snake.indexOf(head) !== -1) {
       this.setState({gameOver: true});
       return;
     }
-    // ROZWOJ SNAKE po zjedzeniu fruitow
     const needsFood = board[head] === food || snake.length === 1;
     if (needsFood) {
       let ii;
@@ -77,13 +75,12 @@ export class SnakeGame extends React.Component {
         ii = Math.floor(Math.random() * numCells);
       } while (board[ii]);
       board[ii] = food;
-      growth += 1; // po zjedzeniu fruit, rosnie o 2 punkty
+      growth += 1;
     } else if (growth) {
-      growth -= 1; // ta wartość stabilizuje rośnięcie snake, w przypadku ustawienia wartości mniejszej lub większej, zacznie rosnąć w nieskończoność
+      growth -= 1;
     } else {
-      board[snake.pop()] = null; // pop() zwraca ostatni element tablicy
+      board[snake.pop()] = null;
     }
-    // unshift dodaje jeden lub więcej elementów do tablicy, w naszym przypadku 1 punkt
     snake.unshift(head);
     board[head] = body;
 
@@ -156,11 +153,9 @@ export class SnakeGame extends React.Component {
 
 
 function getNextIndex(head, direction, numRows, numCols) {
-  // index -> koordynaty x/y, dla łatwiejszego liczenia
   let x = head % numCols;
   let y = Math.floor(head / numCols);
 
-  // poruszanie się do przodu o 1
   switch (direction) {
     case keys.up:
       y = y <= 0 ? numRows - 1 : y - 1;
@@ -178,6 +173,5 @@ function getNextIndex(head, direction, numRows, numCols) {
       return;
   }
 
-  // zwracamy nowe koordynaty x/y do indexu tablicy
   return (numCols * y) + x;
 }
